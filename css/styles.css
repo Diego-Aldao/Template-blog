@@ -1,0 +1,291 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.margin-0 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.25rem;
+}
+
+h2 {
+  font-size: 1.1rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: var(--fuente-principal);
+}
+
+img {
+  max-width: 100%;
+}
+
+.contenedor {
+  height: 100%;
+  width: 90%;
+  padding: 15px 0;
+}
+
+.oculto {
+  display: none;
+}
+
+.hexagon {
+  position: relative;
+  width: 50px;
+  height: 28.87px;
+  background-color: #64c7cc;
+  margin: 14.43px 0;
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+}
+
+.hexagon:before {
+  bottom: 100%;
+  border-bottom: 14.43px solid #64c7cc;
+}
+
+.hexagon:after {
+  top: 100%;
+  width: 0;
+  border-top: 14.43px solid #64c7cc;
+}
+
+:root {
+  --fuente-principal: "Raleway", sans-serif;
+  --color-fondo: #f4f4f4;
+  --color-titulos: #3c3b3b;
+  --color-textos: #757575;
+  --color-hover: #00ffef;
+  --color-hover2: #40e0d0;
+  --color-fondo3: #b3ecec;
+}
+
+.header-principal {
+  width: 100%;
+  height: 400px;
+}
+
+.navegacion-header {
+  border-bottom: 1px solid #cfcfcf;
+  width: 100%;
+  height: 45px;
+  min-height: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.navegacion-header .contenedor-logo {
+  max-width: 270px;
+  width: 82%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navegacion-header .contenedor-logo span {
+  font-family: var(--fuente-principal);
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 4px;
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+.navegacion-header .contenedor-hamburguesa {
+  max-width: 75px;
+  width: 18%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-left: 1px solid #cacaca;
+}
+
+.navegacion-header .contenedor-hamburguesa .hamburguesa {
+  width: 15px;
+  height: 3px;
+  margin: 1px;
+  background: var(--color-textos);
+}
+
+.navegacion-header .contenedor-ul {
+  width: 400px;
+  height: 100%;
+}
+
+.navegacion-header .contenedor-ul ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+}
+
+.navegacion-header .contenedor-ul ul a {
+  text-decoration: none;
+  font-family: var(--fuente-principal);
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--color-textos);
+}
+
+.hero {
+  background: var(--color-fondo);
+  width: 100%;
+  height: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero .contenedor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 60px;
+}
+
+.imagen-hero {
+  width: 100%;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.imagen-hero img {
+  width: 80px;
+  color: white;
+  background: white;
+  -webkit-transform: rotate(1deg);
+          transform: rotate(1deg);
+}
+
+.titulo-principal {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 15px !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  font-family: var(--fuente-principal);
+  color: var(--color-titulos);
+  font-weight: 900;
+}
+
+.descripcion-hero {
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.7rem;
+  line-height: 25px;
+  color: var(--color-textos);
+}
+
+@media (min-width: 768px) {
+  .oculto {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
