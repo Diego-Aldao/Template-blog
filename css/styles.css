@@ -5,6 +5,11 @@
           box-sizing: border-box;
 }
 
+body {
+  background: var(--color-fondo);
+  font-family: var(--fuente-principal);
+}
+
 .margin-0 {
   margin: 0;
   padding: 0;
@@ -22,7 +27,6 @@ h3 {
 p {
   font-size: 0.8rem;
   font-weight: 600;
-  font-family: var(--fuente-principal);
 }
 
 img {
@@ -31,50 +35,39 @@ img {
 
 .contenedor {
   height: 100%;
-  width: 90%;
+  width: 88%;
   padding: 15px 0;
+  margin: 0 auto;
 }
 
 .oculto {
   display: none;
 }
 
-.hexagon {
-  position: relative;
-  width: 50px;
-  height: 28.87px;
-  background-color: #64c7cc;
-  margin: 14.43px 0;
-}
-
-.hexagon:before,
-.hexagon:after {
-  content: "";
-  position: absolute;
-  width: 0;
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
-}
-
-.hexagon:before {
-  bottom: 100%;
-  border-bottom: 14.43px solid #64c7cc;
-}
-
-.hexagon:after {
-  top: 100%;
-  width: 0;
-  border-top: 14.43px solid #64c7cc;
+h1,
+h3,
+h2 {
+  color: var(--color-titulos);
 }
 
 :root {
   --fuente-principal: "Raleway", sans-serif;
   --color-fondo: #f4f4f4;
   --color-titulos: #3c3b3b;
-  --color-textos: #757575;
+  --color-textos: #8b8b8b;
   --color-hover: #00ffef;
   --color-hover2: #40e0d0;
-  --color-fondo3: #b3ecec;
+}
+
+.btn {
+  background: none;
+  border: 1px solid #c9c9c9;
+  padding: 20px 30px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 0.75rem;
+  max-width: 400px;
 }
 
 .header-principal {
@@ -83,7 +76,10 @@ img {
 }
 
 .navegacion-header {
-  border-bottom: 1px solid #cfcfcf;
+  z-index: 99999;
+  position: fixed;
+  background: white;
+  border-bottom: 1px solid #c9c9c9;
   width: 100%;
   height: 45px;
   min-height: 5vh;
@@ -122,7 +118,6 @@ img {
 }
 
 .navegacion-header .contenedor-logo span {
-  font-family: var(--fuente-principal);
   text-transform: uppercase;
   font-size: 0.7rem;
   letter-spacing: 4px;
@@ -147,7 +142,7 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-left: 1px solid #cacaca;
+  border-left: 1px solid #c9c9c9;
 }
 
 .navegacion-header .contenedor-hamburguesa .hamburguesa {
@@ -179,7 +174,6 @@ img {
 
 .navegacion-header .contenedor-ul ul a {
   text-decoration: none;
-  font-family: var(--fuente-principal);
   text-transform: uppercase;
   font-size: 0.7rem;
   font-weight: 600;
@@ -187,7 +181,6 @@ img {
 }
 
 .hero {
-  background: var(--color-fondo);
   width: 100%;
   height: 350px;
   display: -webkit-box;
@@ -216,7 +209,7 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 60px;
+  padding-top: 80px;
 }
 
 .imagen-hero {
@@ -264,10 +257,8 @@ img {
           align-items: center;
   text-transform: uppercase;
   letter-spacing: 3px;
-  text-align: center;
-  font-family: var(--fuente-principal);
-  color: var(--color-titulos);
   font-weight: 900;
+  text-align: center;
 }
 
 .descripcion-hero {
@@ -287,5 +278,559 @@ img {
     display: -ms-flexbox;
     display: flex;
   }
+}
+
+.blogs-principales {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.carta-blog {
+  max-width: 650px;
+  padding: 15px 0;
+  background: white;
+  margin: 0 0 40px;
+}
+
+.carta-blog .contenedor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.titulos-internos {
+  width: 70%;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 900;
+  line-height: 30px;
+  margin: 15px 0 5px;
+}
+
+.subtitulo-internos {
+  width: 95%;
+  padding: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 30px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: var(--color-textos);
+}
+
+.fecha-blog {
+  margin: 25px 0 15px;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.mini-imagen-blog {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: url(../images/cara1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 0 25px;
+}
+
+.imagen-principal-carta {
+  width: 100%;
+  height: 140px;
+}
+
+.img-01 {
+  background: url(../images/adventure-calm-clouds-dawn-414171.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.img-02 {
+  background: url(../images/daylight-forest-glossy-lake-443446.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.img-03 {
+  background: url(../images/landscape-mountains-nature-sky-129105.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.imagen-principal-carta:nth-of-type(1) {
+  background: red !important;
+}
+
+.descripcion-carta {
+  text-align: left;
+  line-height: 28px;
+  font-size: 0.9rem;
+  width: 95%;
+  margin: 15px 0 25px;
+  color: var(--color-textos);
+}
+
+.datos-boton {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 25px 0;
+}
+
+.datos-boton .btn {
+  width: 95%;
+}
+
+.datos-carta {
+  color: #b9b9b9;
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.datos-carta .datos {
+  height: 50%;
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 15px;
+}
+
+.datos-carta .datos p {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+.datos-carta .datos-chico {
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
+  width: 25%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+}
+
+.datos-carta .datos-chico i {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.8rem;
+}
+
+.datos-carta .datos-chico p {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.datos-carta .datos-derecha {
+  padding: 0;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  text-align: left;
+}
+
+.datos-carta .datos-derecha i {
+  width: 35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.8rem;
+}
+
+.datos-carta .datos-derecha p {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.botones-secciones {
+  width: 100%;
+}
+
+.botones-secciones .contenedor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 35px;
+  border-bottom: 1px solid #c9c9c9;
+}
+
+.botones-secciones .contenedor .btn {
+  width: 95%;
+  margin-bottom: 15px;
+}
+
+.otros-blogs {
+  padding: 40px 0 0;
+}
+
+.otros-blogs .contenedor {
+  border-bottom: 1px solid #c9c9c9;
+  max-width: 600px;
+}
+
+.carta-otros-blogs {
+  border: 1px solid #c9c9c9;
+  width: 100%;
+  margin: 0 auto 40px;
+  background: white;
+}
+
+.carta-otros-blogs .otros-blogs-imagen {
+  width: 100%;
+  height: 200px;
+}
+
+.carta-otros-blogs .img-medium-01 {
+  background: url(../images/images-medium/beautiful-calm-clouds-dark-206359.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.carta-otros-blogs .img-medium-02 {
+  background: url(../images/images-medium/green-leafed-tree-besides-body-of-water-during-daytime-158063.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.carta-otros-blogs .img-medium-03 {
+  background: url(../images/images-medium/landscape-photography-of-mountains-covered-in-snow-691668.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.carta-otros-blogs .img-medium-04 {
+  background: url(../images/images-medium/panoramic-view-of-sea-against-blue-sky-248771.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.carta-otros-blogs .otros-blogs-contenido {
+  width: 100%;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.carta-otros-blogs .otros-blogs-descripcion {
+  width: 70%;
+  max-width: 300px;
+  height: 100%;
+  padding: 0 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.carta-otros-blogs .otros-blogs-descripcion h3 {
+  width: 100%;
+  height: 45%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+  line-height: 17px;
+  padding: 3px 8px;
+}
+
+.carta-otros-blogs .otros-blogs-descripcion time {
+  width: 100%;
+  padding: 0 8px;
+  height: 40%;
+  font-size: 0.77rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-textos);
+}
+
+.carta-otros-blogs .otros-blogs-mini-imagen {
+  background: url(../images/cara1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 40px;
+  height: 40px;
+  margin: 15px 20px 15px auto;
+  border-radius: 50%;
+}
+
+.blogs-off-topic {
+  padding: 20px 0;
+}
+
+.off-topic-carta {
+  padding: 20px 0;
+  width: 100%;
+  margin: 0 auto;
+  height: 130px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #c9c9c9;
+}
+
+.off-topic-carta .off-topic-imagen {
+  width: 65px;
+  height: 70px;
+}
+
+.off-topic-carta .img-off-01 {
+  background: url(../images/images-small/human-eye-painting-948620.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.off-topic-carta .img-off-02 {
+  background: url(../images/images-small/pink-petaled-flower-on-light-blue-surface-1037997.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.off-topic-carta .img-off-03 {
+  background: url(../images/images-small/spring-book-with-feather-sketch-826114.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.off-topic-carta .img-off-04 {
+  background: url(../images/images-small/white-headphones-1037999.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.off-topic-carta .img-off-05 {
+  background: url(../images/images-small/three-paintings-hanging-in-gallery-1674049.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.off-topic-carta .off-topic-descripcion {
+  padding: 0px 0px 5px 20px;
+  width: 75%;
+  height: 100%;
+}
+
+.off-topic-carta .off-topic-descripcion h3 {
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.68rem;
+  line-height: 19px;
+  margin-bottom: 5px;
+  font-weight: 900;
+}
+
+.off-topic-carta .off-topic-descripcion time {
+  width: 100%;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-textos);
+}
+
+.about .contenedor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 35px;
+  border-bottom: 1px solid #c9c9c9;
+  max-width: 600px;
+}
+
+.about h3 {
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.8rem;
+  line-height: 19px;
+  margin-bottom: 25px;
+  font-weight: 900;
+}
+
+.about p {
+  width: 100%;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-textos);
+  line-height: 25px;
+  margin-bottom: 25px;
+}
+
+.about .btn {
+  width: 90%;
+  margin: 0 auto;
+}
+
+footer .redes-sociales {
+  max-width: 300px;
+  width: 60%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px 0;
+}
+
+footer .redes-sociales i {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: var(--color-textos);
+}
+
+footer .copy p {
+  width: 80%;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-textos);
+  line-height: 25px;
+  margin-bottom: 25px;
+  word-spacing: 5px;
 }
 /*# sourceMappingURL=styles.css.map */
