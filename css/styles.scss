@@ -2,6 +2,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  cursor: default;
 }
 
 //GLOBALES
@@ -17,6 +19,13 @@ body {
   font-size: 1.25rem;
 }
 
+@media (min-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+    letter-spacing: 120px;
+  }
+}
+
 h2 {
   font-size: 1.1rem;
 }
@@ -29,6 +38,9 @@ p {
 }
 img {
   max-width: 100%;
+}
+img:hover {
+  transform: scale(1.2);
 }
 .contenedor {
   height: 100%;
@@ -44,6 +56,7 @@ h3,
 h2 {
   color: var(--color-titulos);
 }
+
 //CONTENEDOR-IMAGEN-HERO
 
 //FUENTES Y COLORES
@@ -53,7 +66,7 @@ h2 {
   --color-titulos: #3c3b3b;
   --color-textos: #8b8b8b;
   --color-hover: #00ffef;
-  --color-hover2: #40e0d0;
+  --color-hover2: #59eedf;
 }
 //BOTONES
 
@@ -66,6 +79,12 @@ h2 {
   letter-spacing: 3px;
   font-size: 0.75rem;
   max-width: 400px;
+}
+.btn:hover {
+  background: var(--color-titulos);
+  border: 1px solid var(--color-hover2);
+  color: var(--color-hover2);
+  cursor: pointer;
 }
 
 //MIXINS
@@ -87,7 +106,7 @@ h2 {
 
 .header-principal {
   width: 100%;
-  height: 400px;
+  padding-bottom: 30px;
 }
 .navegacion-header {
   z-index: 99999;
@@ -153,7 +172,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 80px;
+    padding-top: 100px;
   }
 }
 .imagen-hero {
@@ -170,13 +189,14 @@ h2 {
 .titulo-principal {
   width: 100%;
   height: 40px;
-  margin-bottom: 15px !important;
+  margin-bottom: 15px;
   @include flexbox(row, center, center);
   text-transform: uppercase;
   letter-spacing: 3px;
   font-weight: 900;
   text-align: center;
 }
+
 .descripcion-hero {
   width: 100%;
   height: 60px;
@@ -193,6 +213,27 @@ h2 {
   }
 }
 
+//INICIO MEDIA QUERYS HEADER
+
+@media (min-width: 425px) {
+  .hero {
+    .contenedor {
+      padding-bottom: 0;
+    }
+  }
+  .header-principal {
+    padding-bottom: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .titulo-principal {
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    letter-spacing: 8px;
+  }
+}
+
 //INICIO CONTENIDO PRINCIPAL
 
 .blogs-principales {
@@ -200,18 +241,23 @@ h2 {
   @include flexbox(column, center, center);
 }
 .carta-blog {
-  max-width: 650px;
   padding: 15px 0;
   background: white;
   margin: 0 0 40px;
   .contenedor {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
+.contenedor-titulo-subtitulo {
+  @include flexbox(column, center, center);
+  flex-basis: 100%;
+  padding: 20px 0;
+}
 .titulos-internos {
-  width: 70%;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 4px;
@@ -219,8 +265,11 @@ h2 {
   line-height: 30px;
   margin: 15px 0 5px;
 }
+.titulos-internos:hover {
+  color: var(--color-hover2);
+  cursor: pointer;
+}
 .subtitulo-internos {
-  width: 95%;
   padding: 5px;
   text-align: center;
   text-transform: uppercase;
@@ -229,12 +278,24 @@ h2 {
   font-weight: 600;
   color: var(--color-textos);
 }
+.contenedor-fecha-imagen {
+  flex-basis: 100%;
+  @include flexbox(column, center, center);
+}
 .fecha-blog {
+  flex-basis: 100%;
   margin: 25px 0 15px;
   font-size: 0.7rem;
   letter-spacing: 2px;
   font-weight: 700;
   text-transform: uppercase;
+  @include flexbox(row, center, center);
+}
+.mini-imagen-blog-contenedor {
+  flex-basis: 100%;
+  margin-bottom: 25px;
+  justify-content: center;
+  display: flex;
 }
 .mini-imagen-blog {
   width: 40px;
@@ -242,11 +303,22 @@ h2 {
   border-radius: 50%;
   background: url(../images/cara1.png);
   @include background(cover, no-repeat, center);
-  margin: 0 0 25px;
 }
 .imagen-principal-carta {
   width: 100%;
-  height: 140px;
+  height: 120px;
+  overflow: hidden;
+}
+.img-01,
+.img-02,
+.img-03 {
+  width: 100%;
+  height: 100%;
+
+  transition: transform 0.3s ease-in-out;
+}
+.imagen-principal-carta:hover div {
+  transform: scale(1.2);
 }
 
 //BACKGROUNDS CARTAS PRINCIPALES
@@ -262,9 +334,6 @@ h2 {
   background: url(../images/landscape-mountains-nature-sky-129105.jpg);
   @include background(cover, no-repeat, center);
 }
-.imagen-principal-carta:nth-of-type(1) {
-  background: red !important;
-}
 
 .descripcion-carta {
   text-align: left;
@@ -276,26 +345,25 @@ h2 {
 }
 .datos-boton {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flexbox(row, center, center);
   margin: 25px 0;
+  flex-wrap: wrap;
   .btn {
     width: 95%;
   }
 }
 .datos-carta {
   color: #b9b9b9;
-  width: 100%;
+  flex-basis: 100%;
   height: 50px;
   display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  justify-content: center;
   .datos {
     height: 50%;
     width: 40%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    @include flexbox(row, flex-end, center);
     padding: 0 15px;
     p {
       text-transform: uppercase;
@@ -303,42 +371,132 @@ h2 {
       letter-spacing: 1px;
     }
   }
+
   .datos-chico {
     border-left: 1px solid rgb(221, 221, 221);
     border-right: 1px solid rgb(221, 221, 221);
     width: 25%;
+    max-width: 90px;
     justify-content: center;
-    padding: 0;
-    i {
-      width: 40%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 0.8rem;
-    }
     p {
-      width: 40%;
-      display: flex;
       justify-content: center;
-      align-items: center;
     }
   }
   .datos-derecha {
-    padding: 0;
     justify-content: flex-start;
     text-align: left;
+  }
+  .datos-chico,
+  .datos-derecha {
     i {
-      width: 35%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flexbox(row, center, center);
       font-size: 0.8rem;
+      width: 25px;
     }
     p {
-      width: 40%;
       display: flex;
-      justify-content: left;
       align-items: center;
+    }
+  }
+}
+
+//INICIO QUERYS CONTENIDO PRINCIPAL
+
+@media (min-width: 480px) {
+  .contenedor-fecha-imagen {
+    flex-direction: row;
+    padding-bottom: 15px;
+  }
+  .fecha-blog {
+    height: 40px;
+    margin: 30px 0 30px;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 15px;
+  }
+  .mini-imagen-blog-contenedor {
+    margin: 30px 0 30px;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 15px;
+    .oculto {
+      display: block;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      color: var(--color-textos);
+      letter-spacing: 2px;
+      margin: 0 10px;
+    }
+  }
+  .imagen-principal-carta {
+    height: 300px;
+  }
+}
+
+@media (min-width: 768px) {
+  .titulos-internos {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 950px) {
+  .carta-blog {
+    border: 1px solid rgb(201, 201, 201);
+    width: 90%;
+    margin: 0 auto 40px;
+    padding: 40px 40px;
+    .contenedor {
+      width: 100%;
+      padding: 0 0 20px;
+      border-bottom: 1px solid rgb(201, 201, 201);
+      margin-bottom: 45px;
+    }
+    .descripcion-carta {
+      margin: 30px 0;
+      line-height: 35px;
+    }
+    .datos-boton {
+      flex-direction: row-reverse;
+    }
+    .datos-carta {
+      flex-basis: 48%;
+      align-items: center;
+      margin-bottom: 0px;
+    }
+  }
+  .contenedor-titulo-subtitulo {
+    flex-basis: 70%;
+    align-items: flex-start;
+    .titulos-internos {
+      text-align: left;
+    }
+    .subtitulo-internos {
+      padding-left: 0;
+      text-align: left;
+    }
+  }
+  .contenedor-fecha-imagen {
+    flex-basis: 30%;
+    height: 160px;
+    flex-direction: column;
+    align-items: flex-end;
+    border-left: 1px solid rgb(201, 201, 201);
+    .fecha-blog {
+      margin: 0;
+      height: 5px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: var(--color-titulos);
+      padding: 0 0 15px;
+      align-items: flex-end;
+    }
+    .mini-imagen-blog-contenedor {
+      margin: 0;
+      flex-direction: row-reverse;
+      align-items: flex-start;
+      padding: 0;
+      .oculto {
+        margin-top: 15px;
+      }
     }
   }
 }
@@ -552,5 +710,33 @@ footer {
       margin-bottom: 25px;
       word-spacing: 5px;
     }
+  }
+}
+
+//CAMBIO DE LAYOUT EN 1024PX
+
+@media (min-width: 1100px) {
+  .hero {
+    display: none;
+  }
+  .contenedor-1024px {
+    padding: 150px 0 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .float-izquierda-desktop {
+    .hero {
+      @include flexbox(row, center, center);
+      height: 250px;
+      .contenedor {
+        padding-top: 0;
+        .titulo-principal {
+          height: 100px;
+          margin-bottom: 0;
+        }
+      }
+    }
+    width: 55%;
   }
 }
