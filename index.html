@@ -8,11 +8,15 @@
       href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,600;0,700;0,900;1,300&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/webfonts/fa-brands-400.eot"
+    />
 
     <!--FONT AWESOME-->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
     />
 
     <!--ESTILOS LOCALES-->
@@ -21,22 +25,65 @@
 
     <title>Blog Naturaleza</title>
   </head>
-  <body>
+  <body id="body">
     <header class="header-principal">
       <nav class="navegacion-header">
         <div class="contenedor-logo"><span>futuro imperfecto</span></div>
         <div class="contenedor-ul oculto">
           <ul>
-            <li><a href="">home</a></li>
+            <li><a class="primer-link" href="">home</a></li>
             <li><a href="">contact</a></li>
             <li><a href="">proyects</a></li>
             <li><a href="">about</a></li>
           </ul>
         </div>
-        <div class="contenedor-hamburguesa">
+        <div id="menu" class="contenedor-hamburguesa">
           <span class="hamburguesa"></span>
           <span class="hamburguesa"></span>
           <span class="hamburguesa"></span>
+        </div>
+        <div id="menu-desplegable" class="menu-desplegable">
+          <div id="menu-fuera" class="menu-fuera"></div>
+          <div class="menu-dentro">
+            <div class="busqueda">
+              <div class="contenedor">
+                <input
+                  type="search"
+                  name=""
+                  id=""
+                  class="search"
+                  placeholder="&#xf002; Buscar"
+                />
+              </div>
+            </div>
+            <div class="blogs">
+              <div class="contenedor">
+                <h3>Lorem, ipsum</h3>
+                <p>Lorem ipsum dolor sit amet consectetur</p>
+              </div>
+            </div>
+            <div class="blogs">
+              <div class="contenedor">
+                <h3>Adipisci sed doloremque</h3>
+                <p>Lorem ipsum dolor sit amet consectetur</p>
+              </div>
+            </div>
+            <div class="blogs">
+              <div class="contenedor">
+                <h3>Neque libero ipsam</h3>
+                <p>Lorem ipsum dolor sit amet consectetur</p>
+              </div>
+            </div>
+            <div class="blogs">
+              <div class="contenedor sin-border">
+                <h3>Consectetur, adipisicing</h3>
+                <p>Lorem ipsum dolor sit amet consectetur</p>
+              </div>
+            </div>
+            <div class="logueo">
+              <button class="btn">Entrar</button>
+            </div>
+          </div>
         </div>
       </nav>
       <div class="hero">
@@ -195,7 +242,7 @@
         </div>
         <div class="botones-secciones">
           <div class="contenedor">
-            <button class="btn disabled">pagina anterior</button>
+            <button id="disabled" class="btn">pagina anterior</button>
             <button class="btn">siguiente pagina</button>
           </div>
         </div>
@@ -337,5 +384,6 @@
         </footer>
       </aside>
     </div>
+    <script src="app.js"></script>
   </body>
 </html>
